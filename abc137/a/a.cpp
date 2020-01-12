@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    int arr[3];
+
+    arr[0] = a + b;
+    arr[1] = a - b;
+    arr[2] = a * b;
+
+    sort(arr, arr + 3, greater<int>());
+
+    cout << arr[0] << endl;
+    return 0;
+}
