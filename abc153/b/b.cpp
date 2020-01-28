@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int n, k;
-    cin >> n >> k;
+    int h, n;
+    cin >> h >> n;
 
     int a[n];
     for(int i = 0; i < n; ++i) {
@@ -11,15 +11,14 @@ int main() {
 
     sort(a, a + n, greater<int>());
 
-    long long result = 0;
     for(int i = 0; i < n; i++) {
-        if(k > 0) {
-            k--;
-            continue;
+        h -= a[i];
+        if(h <= 0) {
+            cout << "Yes" << endl;
+            return 0;
         }
-        result += a[i];
-    };
-    cout << result << endl;
+    }
+    cout << "No" << endl;
 
     return 0;
 }
